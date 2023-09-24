@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    color: rgb(237, 111, 111);
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.text :hover {
+    text-decoration: underline;
+}
