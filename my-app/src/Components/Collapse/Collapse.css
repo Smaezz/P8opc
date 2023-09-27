@@ -22,13 +22,31 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
 }
 
 .tiroir {
+    display: block;
+    width: 100%;
     background-color: rgb(245, 240, 240);
-    height: 200px;
+    height: auto;
     border-radius: 5px;
     margin-top: -18px;
     position: relative;
     z-index: 1;
 }
+
+
+.fa-chevron :hover {
+    transform: rotate(180deg);
+
+}
+
+button {
+    text-decoration: none;
+    background-color: #FF6060;
+    border: none;
+}
+
+
+

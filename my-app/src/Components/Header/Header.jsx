@@ -1,4 +1,6 @@
 import './Header.css';
+import { Link } from "react-router-dom";
+
 
 export default function Header() {
 	return (
@@ -13,8 +15,8 @@ export default function Header() {
 		</svg>	
 		</div>
 		    <div className="text">
-		        <div className="accueil">Accueil</div>
-			    <div className="apropos">A Propos</div>  
+			    <Link to="/" className='accueil'>Accueil</Link>
+			    <Link to="/apropos" className='apropos'>A Propos</Link> 
 	        </div>   
 	</div>
 	);

@@ -14,7 +14,7 @@ function Banner2(props) {
 };
 
 function Apropos() {
-    return <div class="body">
+    return <div className="body">
                 <Header/>
                 <Banner2/>
                 <Collapse/>

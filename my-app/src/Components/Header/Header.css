@@ -5,18 +5,35 @@
     margin: 20px;
 }
 
+.accueil {
+    color: rgb(237, 111, 111);
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 22px;
+    text-decoration: none;
+
+}
+
+.accueil :hover {
+    text-decoration: underline;
+}
+
+.apropos {
+    color: rgb(237, 111, 111);
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.apropos :hover {
+    text-decoration: underline;
+}
+
 .text {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    color: rgb(237, 111, 111);
-    cursor: pointer;
-    font-weight: 400;
-    font-size: 22px;
-}
-
-.text :hover {
-    text-decoration: underline;
+    gap: 50px;   
 }
