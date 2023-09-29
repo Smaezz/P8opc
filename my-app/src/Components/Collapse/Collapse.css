@@ -1,5 +1,8 @@
 .collapse {
+    display: flex;
+    flex-direction: column;
     margin: 30px;
+    width: 100%;
 }
 
 .boxTitle {
@@ -11,6 +14,8 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .titleCollapse {
@@ -26,21 +31,21 @@
 }
 
 .tiroir {
-    display: block;
+    display: flex;
     width: 100%;
     background-color: rgb(245, 240, 240);
-    height: auto;
     border-radius: 5px;
-    margin-top: -18px;
     position: relative;
     z-index: 1;
+    padding: 20px;
+    transition: all 1s ease-in-out;
 }
 
-
-.fa-chevron :hover {
-    transform: rotate(180deg);
-
-}
+.tiroir_hidden {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    }
 
 button {
     text-decoration: none;
@@ -49,4 +54,38 @@ button {
 }
 
 
+.arrow {
+    width: 20px;
+    transition: all 0.3s ease-in-out;
+    @media screen and (max-width: 1230px){
+    width: 12px;     
+    }
+}
+.arrow_up {
+    transform: rotate(0deg);
+}
+.arrow_down {
+    transform: rotate(180deg);
+}
+
+.content {
+color:#FF6060;
+display: flex;
+flex-direction: column;
+width: 100%;
+letter-spacing: 1px;
+visibility: visible;
+opacity: 1;
+height: auto;
+padding: 10px;
+font-size: 12px;
+transition: visibility 0.5s ease-in-out,
+            opacity 0.5s ease-in-out,
+            height 0.2s ease-in-out;
+}
+
+
+main {
+    width: 100%;
+}
 

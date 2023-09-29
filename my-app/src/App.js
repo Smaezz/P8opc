@@ -13,7 +13,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/fiche" element={<Fiche />} />
             <Route path="/apropos" element={<Apropos />} />
-            <Route path="/erreur404" element={<Erreur404 />} />
+            <Route path="*" element={<Erreur404 />} />
         </Routes>
     </div>
 );
