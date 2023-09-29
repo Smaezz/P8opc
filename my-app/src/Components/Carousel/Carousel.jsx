@@ -1,25 +1,43 @@
 import '../Carousel/Carousel.css';
-import datas from '../Gallery/datas';
+import ArrowRight from '../../Assets/rightArrow.png';
+import ArrowLeft from '../../Assets/leftArrow.png';
+import { useState } from 'react';
 
+export default function Slider({imageSlider}) {
 
+    const [currentIndex, setCurrentIndex] = useState(0)
 
+    const nextSlide = () => {
+        setCurrentIndex(currentIndex + 1)
+        if(currentIndex === imageSlider.length - 1)
+            setCurrentIndex(0)
+    }
 
+    const prevSlide = () => {
+        setCurrentIndex(currentIndex - 1)
+        if(currentIndex === 0)
+            setCurrentIndex(imageSlider.length - 1)
+    }
 
-
-
-export default function Carousel() {
-     return 
-        <div className='carousel'>
-            {datas.map(data => (
-              <div className="carouselImage" key={data.id}>
-              <img
-                id={data.id}
-                className="cardImage"
-                src={data.cover}
-                alt="logement"
-              />
-                      <h6 className='titleCard'> {data.title} </h6>
-                    </div>
-            ))}
-        </div>
+    return (
+        <section style={{backgroundImage : `url(${imageSlider[currentIndex]})`}} className='carousel'>
+            {imageSlider.length > 1 && 
+                <>
+                    <img 
+                        className='carousel_arrow carousel_arrow_right' 
+                        src={ArrowRight} 
+                        alt="show next slider" 
+                        onClick={nextSlide}
+                    />
+                    <img 
+                        className='carousel_arrow carousel_arrow_left' 
+                        src={ArrowLeft} 
+                        alt="show previous slider" 
+                        onClick={prevSlide}
+                    />
+                    <p className='slideCount'>{currentIndex + 1} / {imageSlider.length}</p>
+                </>
+            } 
+        </section>
+    )
 }

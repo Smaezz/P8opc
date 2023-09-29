@@ -12,13 +12,13 @@ export default function Collapse({ title, content}) {
 	        <h3 className='titleCollapse' onClick={() => setRotate(!rotate)}>
 				{title}
 				<img 
-				   className={rotate ? 'arrow arrow_up' : 'arrow arrow_down'}
+				   className={rotate ? 'arrow arrow_down' : 'arrow arrow_up'}
 				   src={arrow}
 				   alt="voir texte"
 				   />
 		    </h3>
         </div>
-	    <div className={rotate ? 'tiroir_hidden' : 'tiroir'}>
+	    <div className={rotate ? 'tiroir' : 'tiroir_hidden'}>
 			{Array.isArray(content) ? content.map((item, index) => {
 				return (
 					<p key={index}>{item}</p>
