@@ -1,13 +1,12 @@
 import '../Card/Card.css'
 import '../Gallery/Gallery'
+import { Link } from 'react-router-dom'
 
-export default function Card() {
+export default function Card({id, title, cover}) {
 	return (
-		<article className='Card'>
-        <img src="cover" alt="logement"></img>
-        <div src='title'></div>
-        </article>
-	);
+            <Link to={`/fiche/${id}`}>
+                <img src={cover} alt={title} />
+                <h3>{title}</h3>	
+            </Link>
+        )
 };
-
-Card ()

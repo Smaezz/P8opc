@@ -4,10 +4,10 @@ import Slider from '../Components/Carousel/Carousel';
 
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-import datas from '../Components/Gallery/datas'
-import Collapse from "../Components/Collapse/Collapse"
-//import greyStar from '../../assets/grey_star.png';
-//import redStar from '../../assets/red_star.png';
+import datas from '../Components/Gallery/datas';
+import Collapse from "../Components/Collapse/Collapse";
+import greyStar from '../Assets/grey_star.png';
+import redStar from '../Assets/red_star.png';
 
 
 export default function Fiche() {
@@ -26,7 +26,7 @@ export default function Fiche() {
 	const rating = dataCurrentAccomodation[0].rating;
 	const description  = dataCurrentAccomodation[0].description;
 	const equipments = dataCurrentAccomodation[0].equipments;
-
+	
 	return (
 		<>
 			<Header/>
@@ -56,9 +56,9 @@ export default function Fiche() {
 						<div className="accomodation_content_host_stars">
 							{[...Array(5)].map((star, index) => {
 								const ratingValue = index + 1;
-								//return (
-									//<img key={index} src={ratingValue <= rating ? redStar : greyStar} alt="star" />
-								//)
+								return (
+									<img key={index} src={ratingValue <= rating ? redStar : greyStar} alt="star" />
+								)
 							})}
 						</div>
 					</div>
