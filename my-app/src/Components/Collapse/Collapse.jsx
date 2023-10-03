@@ -4,6 +4,7 @@ import arrow from '../../Assets/chevronUp.png';
 
 
 export default function Collapse({ title, content}) {
+	
 	const [rotate, setRotate] = useState(false) ;
 
     return (
