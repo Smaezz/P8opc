@@ -27,6 +27,8 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    align-items: center;
+    padding-bottom: 10px;
 }
 
 .tiroir {
@@ -36,16 +38,15 @@
     border-radius: 5px;
     position: relative;
     z-index: 1;
-    padding: 20px;
     transition: all 1s ease-in-out;
 }
 
 .tiroir_hidden {
     width: 100%;
     display: flex;
-    visibility: hidden;
     opacity: 0;
     height: 0;
+    animation: fillDown 1s ease-in-out forwards;
     }
 
 button {
@@ -54,7 +55,6 @@ button {
     background-color: #FF6060;
     border: none;
 }
-
 
 .arrow {
     width: 15px;
@@ -67,13 +67,14 @@ button {
     transform: rotate(0deg);
 }
 .arrow_down {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
 }
 
+.textContent {
+    padding: 10px;
+    color:#FF6060;
+}
 .content {
-color:#FF6060;
-display: flex;
-flex-direction: column;
 width: 100%;
 letter-spacing: 1px;
 visibility: visible;
@@ -81,9 +82,6 @@ opacity: 1;
 height: auto;
 padding: 10px;
 font-size: 12px;
-transition: visibility 0.5s ease-in-out,
-            opacity 0.5s ease-in-out,
-            height 0.2s ease-in-out;
 }
 
 
@@ -93,4 +91,6 @@ main {
     gap: 2rem;
     padding: 2rem;
 }
+
+
 

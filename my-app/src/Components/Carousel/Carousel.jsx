@@ -35,7 +35,7 @@ export default function Slider({imageSlider}) {
                         alt="show next slider" 
                         onClick={nextSlide}
                     />
-                    <p className='slideCount'>{currentIndex + 1} / {imageSlider.length}</p>
+                    <p className='slideCount'> {currentIndex + 1} / {imageSlider.length}</p>
                 </>
             } 
         </section>

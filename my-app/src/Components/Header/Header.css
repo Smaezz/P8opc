@@ -5,13 +5,18 @@
     margin: 20px;
 }
 
+.logo {
+    display: flex;
+    border-radius: 0;
+}
+
 .accueil {
     color: rgb(237, 111, 111);
     cursor: pointer;
     font-weight: 400;
     font-size: 22px;
     text-decoration: none;
-
+    padding-bottom: 30px;
 }
 
 .accueil :hover {
@@ -24,16 +29,18 @@
     font-weight: 400;
     font-size: 22px;
     text-decoration: none;
+    padding-bottom: 30px;
 }
 
 .apropos :hover {
     text-decoration: underline;
 }
 
-.text {
+.textH {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 50px;   
 }
+
