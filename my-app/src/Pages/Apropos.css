@@ -1,0 +1,15 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    padding-inline: 8rem;
+}
+
+@media (max-width: 900px) {
+
+    main {
+    padding-inline: 0px;
+    }
+}
+

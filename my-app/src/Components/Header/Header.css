@@ -2,11 +2,21 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.flexLogo {
+    display: flex;
 }
 
 .logo {
     display: flex;
+    border-radius: 0;
+}
+
+.logoSmart{
+    display: none;
     border-radius: 0;
 }
 
@@ -44,3 +54,22 @@
     gap: 50px;   
 }
 
+@media (max-width: 650px) {
+
+    .logo {
+        display: none;
+    }
+    .logoSmart{
+        display: flex;
+        width: 176px;
+    }
+    .textH {
+    gap: 10px;    
+    }
+    .accueil{
+        font-size: 16px;
+    }
+    .apropos{
+        font-size: 16px;
+    }
+}

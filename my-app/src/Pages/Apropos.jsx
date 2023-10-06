@@ -2,6 +2,7 @@ import Header from '../Components/Header/Header';
 import Footer from '../Components/Footer/Footer';
 import Image2 from'../Assets/SourceB.png';
 import Collapse from '../Components/Collapse/Collapse';
+import '../Pages/Apropos.css';
 
 
 function Banner2(props) {
