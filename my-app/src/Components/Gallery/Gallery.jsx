@@ -6,11 +6,11 @@ export default function Gallery() {
   
   return (
     <div className='section2'>
-        {datas.map(data => {
+        {datas.map((data,index) => {
             return (
-              <div className='cardGallery img'>
+              <div key={index} className='cardGallery img'>
                 <Card
-                    key={data.id}
+                    key={index}
                     id={data.id}
                     title={data.title}
                     cover={data.cover}
