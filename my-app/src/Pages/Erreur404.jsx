@@ -10,7 +10,7 @@ function Erreur404() {
                 <Header/>
                     <div className="main">       
                         <div className="errorNumber">404</div>
-                        <div className="errorMessage">Oups! La page que vous demandez n'existe pas.</div>
+                        <div className="errorMessage"><p align="center">Oups! La page que vous demandez n'existe pas.</p></div>
                         <Link to="/"  className='homeReturn'>Retourner sur la page d'accueil</Link>
                     </div>
                 <Footer/>      

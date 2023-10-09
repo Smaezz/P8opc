@@ -1,7 +1,7 @@
 body {
     font-family: "Montserrat";
     box-sizing: border-box;
-    margin: 2rem;
+    margin-inline: 4rem;
 }
 
 
@@ -10,5 +10,12 @@ body {
     body {
     max-width: 1440px;
     margin: 0 auto;
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }

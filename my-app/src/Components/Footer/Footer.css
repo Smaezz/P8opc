@@ -1,11 +1,5 @@
 .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-    background: black;
-    gap: 30px
+    margin-inline: -4rem;
 }
 
 .logoF {
@@ -36,6 +30,10 @@
     }
     .logoFsmart {
         display: flex;
+        border-radius: 0px;
     }
-
+    .footer {
+        margin-inline: -20px;
+        border-radius: 0px;
+    }
 }

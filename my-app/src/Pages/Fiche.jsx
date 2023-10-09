@@ -2,6 +2,7 @@ import Header from '../Components/Header/Header' ;
 import Footer from '../Components/Footer/Footer' ;
 import Slider from '../Components/Carousel/Carousel';
 import '../Pages/Fiche.css';
+import '../Pages/Erreur404';
 
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
@@ -14,12 +15,16 @@ import redStar from '../Assets/red_star.png';
 export default function Fiche() {
 	
 	const [imageSlider, setImageSlider] = useState([]);
-
 	const idAccomodation = useParams('id').id;
 	const dataCurrentAccomodation = datas.filter(data => data.id === idAccomodation);
 	
+	
+	
+	
 	useEffect(() => {
+		
 		const dataCurrentAccomodation = datas.filter(data => data.id === idAccomodation);
+		
 		setImageSlider(dataCurrentAccomodation[0].pictures);
 	}, [idAccomodation]);
 
@@ -74,7 +79,7 @@ export default function Fiche() {
 				</div>
 			</main>
 			<Footer/>
-		</>
+		</>		
 	)
 }
 

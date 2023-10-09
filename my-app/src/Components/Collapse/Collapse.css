@@ -21,7 +21,7 @@
     margin-inline: 1rem;
     color: white;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 16px;
     padding-top: 12px;
     width: 100%;
     display: flex;
@@ -29,6 +29,7 @@
     flex-direction: row;
     align-items: center;
     padding-bottom: 10px;
+    height: 33%;
 }
 
 .tiroir {
@@ -57,10 +58,10 @@ button {
 }
 
 .arrow {
-    width: 15px;
+    width: 20px;
+    height: 100%;
     transition: all 0.3s ease-in-out;
-    @media screen and (max-width: 1230px){
-    width: 12px;     
+    @media screen and (max-width: 1230px){    
     }
 }
 .arrow_up {
@@ -83,7 +84,6 @@ height: auto;
 padding: 10px;
 font-size: 12px;
 }
-
 
 
 

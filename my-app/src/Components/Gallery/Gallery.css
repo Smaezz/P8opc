@@ -8,7 +8,8 @@
     border-radius: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .cardGallery {
@@ -31,6 +32,10 @@
 
 @media (max-width: 995px) {
 
+    .section2 {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
     .cardGallery {
         width: 100%;
     }
