@@ -18,7 +18,8 @@ export default function Slider({imageSlider}) {
         if(currentIndex === 0)
             setCurrentIndex(imageSlider.length - 1)
     }
-
+    
+    
     return (
         <section style={{backgroundImage : `url(${imageSlider[currentIndex]})`}} className='carousel'>
             {imageSlider.length > 1 && 
@@ -35,9 +36,9 @@ export default function Slider({imageSlider}) {
                         alt="show next slider" 
                         onClick={nextSlide}
                     />
-                    <p className='slideCount'> {currentIndex + 1} / {imageSlider.length}</p>
-                </>
+                    <p className='slideCount'>{currentIndex + 1} / {imageSlider.length}</p>
+                </>    
             } 
         </section>
-    )
-}
+    ) 
+} 

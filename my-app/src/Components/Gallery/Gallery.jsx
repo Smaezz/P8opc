@@ -2,6 +2,7 @@ import '../Gallery/Gallery.css';
 import datas from './datas';
 import Card from '../Card/Card';
 
+
 export default function Gallery() {
   
   return (
@@ -21,3 +22,6 @@ export default function Gallery() {
     </div>
    )
 }
+
+
+

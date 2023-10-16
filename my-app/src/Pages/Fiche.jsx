@@ -2,8 +2,7 @@ import Header from '../Components/Header/Header' ;
 import Footer from '../Components/Footer/Footer' ;
 import Slider from '../Components/Carousel/Carousel';
 import '../Pages/Fiche.css';
-import '../Pages/Erreur404';
-
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import datas from '../Components/Gallery/datas';
@@ -12,38 +11,41 @@ import greyStar from '../Assets/grey_star.png';
 import redStar from '../Assets/red_star.png';
 
 
+
 export default function Fiche() {
 	
 	const [imageSlider, setImageSlider] = useState([]);
-	const idAccomodation = useParams('id').id;
-	const dataCurrentAccomodation = datas.filter(data => data.id === idAccomodation);
-	
-	
-	
-	
-	useEffect(() => {
-		
-		const dataCurrentAccomodation = datas.filter(data => data.id === idAccomodation);
-		
-		setImageSlider(dataCurrentAccomodation[0].pictures);
-	}, [idAccomodation]);
+	const idUrlLocation = useParams("id").id;
+	const dataCurrentLocation = datas.filter(data => data.id === idUrlLocation);
+	const navigate = useNavigate();
 
-	const name = dataCurrentAccomodation[0].host.name.split(' '); 
-	const rating = dataCurrentAccomodation[0].rating;
-	const description  = dataCurrentAccomodation[0].description;
-	const equipments = dataCurrentAccomodation[0].equipments;
-	
+ useEffect (() => {
+
+		if (dataCurrentLocation === false) {
+		navigate("/Erreur404");	
+
+	    } else {		
+			setImageSlider(dataCurrentLocation[0].pictures);
+		 } 
+		}, [navigate, dataCurrentLocation, idUrlLocation]);
+		
+
+	const name = dataCurrentLocation[0].host.name.split(' '); 
+	const rating = dataCurrentLocation[0].rating;
+	const description  = dataCurrentLocation[0].description;
+	const equipments = dataCurrentLocation[0].equipments;
+
 	return (
 		<>
 			<Header/>
 			<Slider imageSlider={imageSlider}/>
-			<main className="accomodation">
-				<div className="accomodation_content">
+			<main className="location">
+				<div className="location_content">
 					<div className="infos">
-						<h1>{dataCurrentAccomodation[0].title}</h1>
-						<p>{dataCurrentAccomodation[0].location}</p>
+						<h1>{dataCurrentLocation[0].title}</h1>
+						<p>{dataCurrentLocation[0].location}</p>
 						<div className='buttonBox'>
-							{dataCurrentAccomodation[0].tags.map((tag, index) => {
+							{dataCurrentLocation[0].tags.map((tag, index) => {
 								return (
 									<button key={index}>{tag}</button>
 								)
@@ -53,10 +55,10 @@ export default function Fiche() {
 					<div className="content_host">
 						<div className='host_nameBox'>
 							<div className='host_name'>
-								<span>{name[0]}</span>
+     							<span>{name[0]}</span>
 								<span>{name[1]}</span>
 							</div>
-							<img className='host_picture' src={dataCurrentAccomodation[0].host.picture} alt="host of this accomodation" />
+							<img className='host_picture' src={dataCurrentLocation[0].host.picture} alt="host of this accomodation" />
 						</div>
 							
 						<div className="stars">
@@ -80,6 +82,5 @@ export default function Fiche() {
 			</main>
 			<Footer/>
 		</>		
-	)
-}
-
+	) 	
+};
