@@ -19,14 +19,11 @@ export default function Fiche() {
 	const dataCurrentLocation = datas.filter(data => data.id === idUrlLocation);
 	const navigate = useNavigate();
 
-	useEffect (() => {
-		if(!dataCurrentLocation) {
-			navigate("/Erreur404")
-		}}, [idUrlLocation]); console.log(idUrlLocation);
-
-	useEffect (() => {
-	setImageSlider(dataCurrentLocation.length ? dataCurrentLocation[0].pictures:["",""]);
-	}, [])
+		useEffect (() => { 
+			if (!datas.length || !dataCurrentLocation.length) { 
+				navigate("/Erreur404"); 
+			} else {
+				setImageSlider(dataCurrentLocation[0].pictures); } }, [navigate, dataCurrentLocation, idUrlLocation]);
        
 	const name = dataCurrentLocation.length ? dataCurrentLocation[0].host.name.split(' '):["",""]; 
 	const rating = dataCurrentLocation.length ? dataCurrentLocation[0].rating:["",""];
