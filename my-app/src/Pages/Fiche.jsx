@@ -14,26 +14,24 @@ import redStar from '../Assets/red_star.png';
 
 export default function Fiche() {
 	
-	const [imageSlider, setImageSlider] = useState([]);
+	const [imageSlider, setImageSlider] = useState([0]);
 	const idUrlLocation = useParams("id").id;
 	const dataCurrentLocation = datas.filter(data => data.id === idUrlLocation);
 	const navigate = useNavigate();
 
- useEffect (() => {
+	useEffect (() => {
+		if(!dataCurrentLocation) {
+			navigate("/Erreur404")
+		}}, [idUrlLocation]); console.log(idUrlLocation);
 
-		if (dataCurrentLocation === false) {
-		navigate("/Erreur404");	
-
-	    } else {		
-			setImageSlider(dataCurrentLocation[0].pictures);
-		 } 
-		}, [navigate, dataCurrentLocation, idUrlLocation]);
-		
-
-	const name = dataCurrentLocation[0].host.name.split(' '); 
-	const rating = dataCurrentLocation[0].rating;
-	const description  = dataCurrentLocation[0].description;
-	const equipments = dataCurrentLocation[0].equipments;
+	useEffect (() => {
+	setImageSlider(dataCurrentLocation.length ? dataCurrentLocation[0].pictures:["",""]);
+	}, [])
+       
+	const name = dataCurrentLocation.length ? dataCurrentLocation[0].host.name.split(' '):["",""]; 
+	const rating = dataCurrentLocation.length ? dataCurrentLocation[0].rating:["",""];
+	const description  = dataCurrentLocation.length ? dataCurrentLocation[0].description:["",""];
+	const equipments = dataCurrentLocation.length ? dataCurrentLocation[0].equipments:["",""];
 
 	return (
 		<>
@@ -42,10 +40,10 @@ export default function Fiche() {
 			<main className="location">
 				<div className="location_content">
 					<div className="infos">
-						<h1>{dataCurrentLocation[0].title}</h1>
-						<p>{dataCurrentLocation[0].location}</p>
+						<h1>{dataCurrentLocation.length ? dataCurrentLocation[0].title:["",""]}</h1>
+						<p>{dataCurrentLocation.length ? dataCurrentLocation[0].location:["",""]}</p>
 						<div className='buttonBox'>
-							{dataCurrentLocation[0].tags.map((tag, index) => {
+							{dataCurrentLocation.length ? dataCurrentLocation[0].tags:["",""].map((tag, index) => {
 								return (
 									<button key={index}>{tag}</button>
 								)
@@ -58,7 +56,7 @@ export default function Fiche() {
      							<span>{name[0]}</span>
 								<span>{name[1]}</span>
 							</div>
-							<img className='host_picture' src={dataCurrentLocation[0].host.picture} alt="host of this accomodation" />
+							<img className='host_picture' src={dataCurrentLocation.length ? dataCurrentLocation[0].host.picture:["",""]} alt="host of this accomodation" />
 						</div>
 							
 						<div className="stars">
@@ -82,5 +80,5 @@ export default function Fiche() {
 			</main>
 			<Footer/>
 		</>		
-	) 	
-};
+	    );	
+	};
