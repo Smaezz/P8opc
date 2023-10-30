@@ -1,5 +1,4 @@
-import Header from '../Components/Header/Header';
-import Footer from '../Components/Footer/Footer';
+
 import Image2 from'../Assets/SourceB.png';
 import Collapse from '../Components/Collapse/Collapse';
 import '../Pages/Apropos.css';
@@ -41,9 +40,8 @@ export default function Apropos() {
 
 	return (
 		<div>
-			<Header />
 			{Banner2()}
-			<main>
+			<main className='mainC'>
 				{aboutDatas.map(data => {
 					return (
 						<div className='collapseBox' key={data.id}>
@@ -52,7 +50,6 @@ export default function Apropos() {
 					)}
 				)}
 			</main>
-			<Footer />
 		</div>
 	)
 }

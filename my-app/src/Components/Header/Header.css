@@ -29,8 +29,13 @@
     padding-bottom: 30px;
 }
 
-.accueil :hover {
+.accueilUnderline {
     text-decoration: underline;
+    color: #FF6060;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 24px;
+    padding-bottom: 30px;
 }
 
 .apropos {
@@ -42,8 +47,13 @@
     padding-bottom: 30px;
 }
 
-.apropos :hover {
+.aproposUnderline {
     text-decoration: underline;
+    color: #FF6060;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 24px;
+    padding-bottom: 30px;
 }
 
 .textH {

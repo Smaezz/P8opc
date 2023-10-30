@@ -40,15 +40,14 @@
     position: relative;
     z-index: 1;
     transition: all 1s ease-in-out;
-}
+} 
 
 .tiroir_hidden {
-    width: 100%;
     display: flex;
     opacity: 0;
     height: 0;
     animation: fillDown 1s ease-in-out forwards;
-    }
+    } 
 
 button {
     width: 100%;
@@ -61,8 +60,7 @@ button {
     width: 20px;
     height: 100%;
     transition: all 0.3s ease-in-out;
-    @media screen and (max-width: 1230px){    
-    }
+   
 }
 .arrow_up {
     transform: rotate(0deg);
@@ -73,8 +71,9 @@ button {
 
 .textContent {
     padding: 10px;
-    color:#FF6060;
+    color:#FF6060;  
 }
+
 .content {
 width: 100%;
 letter-spacing: 1px;
@@ -85,5 +84,11 @@ padding: 10px;
 font-size: 12px;
 }
 
-
+.mainC {
+    padding-top: 3rem;
+    @media screen and (max-width: 650px){  
+    gap: 0px;
+    margin-top: -2rem;
+    margin-bottom: -1rem;}
+}
 

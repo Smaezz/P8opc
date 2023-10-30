@@ -1,4 +1,5 @@
-
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 import {Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import Fiche from './Pages/Fiche';
@@ -9,12 +10,14 @@ import './App.css';
 function App() {             
     return (
     <div className="App">
+        <Header/>
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/fiche/:id" element={<Fiche />} />
             <Route path="/apropos" element={<Apropos />} />
             <Route path="*" element={<Erreur404 />} />
         </Routes>
+        <Footer/>
     </div>
 );
 }

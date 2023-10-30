@@ -1,5 +1,4 @@
-import Header from '../Components/Header/Header' ;
-import Footer from '../Components/Footer/Footer' ;
+
 import Slider from '../Components/Carousel/Carousel';
 import '../Pages/Fiche.css';
 import { useNavigate } from 'react-router-dom';
@@ -13,34 +12,35 @@ import redStar from '../Assets/red_star.png';
 
 
 export default function Fiche() {
-	
+
 	const [imageSlider, setImageSlider] = useState([0]);
 	const idUrlLocation = useParams("id").id;
 	const dataCurrentLocation = datas.filter(data => data.id === idUrlLocation);
 	const navigate = useNavigate();
 
-		useEffect (() => { 
-			if (!datas.length || !dataCurrentLocation.length) { 
-				navigate("/Erreur404"); 
-			} else {
-				setImageSlider(dataCurrentLocation[0].pictures); } }, [navigate, dataCurrentLocation, idUrlLocation]);
-       
-	const name = dataCurrentLocation.length ? dataCurrentLocation[0].host.name.split(' '):["",""]; 
-	const rating = dataCurrentLocation.length ? dataCurrentLocation[0].rating:["",""];
-	const description  = dataCurrentLocation.length ? dataCurrentLocation[0].description:["",""];
-	const equipments = dataCurrentLocation.length ? dataCurrentLocation[0].equipments:["",""];
+	useEffect(() => {
+		if (!datas.length || !dataCurrentLocation.length) {
+			navigate("/Erreur404");
+		} else {
+			setImageSlider(dataCurrentLocation[0].pictures);
+		}
+	}, [navigate, dataCurrentLocation, idUrlLocation]);
+
+	const name = dataCurrentLocation.length ? dataCurrentLocation[0].host.name.split(' ') : ["", ""];
+	const rating = dataCurrentLocation.length ? dataCurrentLocation[0].rating : ["", ""];
+	const description = dataCurrentLocation.length ? dataCurrentLocation[0].description : ["", ""];
+	const equipments = dataCurrentLocation.length ? dataCurrentLocation[0].equipments : ["", ""];
 
 	return (
 		<>
-			<Header/>
-			<Slider imageSlider={imageSlider}/>
+			<Slider imageSlider={imageSlider} />
 			<main className="location">
 				<div className="location_content">
 					<div className="infos">
-						<h1>{dataCurrentLocation.length ? dataCurrentLocation[0].title:["",""]}</h1>
-						<p>{dataCurrentLocation.length ? dataCurrentLocation[0].location:["",""]}</p>
+						<h1>{dataCurrentLocation.length ? dataCurrentLocation[0].title : ["", ""]}</h1>
+						<p>{dataCurrentLocation.length ? dataCurrentLocation[0].location : ["", ""]}</p>
 						<div className='buttonBox'>
-							{dataCurrentLocation.length ? dataCurrentLocation[0].tags:["",""].map((tag, index) => {
+							{dataCurrentLocation.length ? dataCurrentLocation[0].tags : ["", ""].map((tag, index) => {
 								return (
 									<button key={index}>{tag}</button>
 								)
@@ -50,12 +50,12 @@ export default function Fiche() {
 					<div className="content_host">
 						<div className='host_nameBox'>
 							<div className='host_name'>
-     							<span>{name[0]}</span>
+								<span>{name[0]}</span>
 								<span>{name[1]}</span>
 							</div>
-							<img className='host_picture' src={dataCurrentLocation.length ? dataCurrentLocation[0].host.picture:["",""]} alt="host of this accomodation" />
+							<img className='host_picture' src={dataCurrentLocation.length ? dataCurrentLocation[0].host.picture : ["", ""]} alt="host of this accomodation" />
 						</div>
-							
+
 						<div className="stars">
 							{[...Array(5)].map((star, index) => {
 								const ratingValue = index + 1;
@@ -68,14 +68,13 @@ export default function Fiche() {
 				</div>
 				<div className="collapseBox">
 					<div className="collapse_item">
-						<Collapse title={'Description'} content={description} />	
+						<Collapse title={'Description'} content={description} />
 					</div>
 					<div className="collapse_item">
-						<Collapse title={'Équipements'} content={equipments}/>
-					</div>	
+						<Collapse title={'Équipements'} content={equipments} />
+					</div>
 				</div>
 			</main>
-			<Footer/>
-		</>		
-	    );	
-	};
+		</>
+	);
+};
